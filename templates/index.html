@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>To-Do List App</title>
+</head>
+<body>
+    <header>
+        <h1>Create Your TODO</h1>
+        <form action="/" method="post">
+            <input type="search" name="newTodo" id="searchInput" placeholder="Add a new to do List">
+            <button type="submit"  id="createBtn">Create new</button>
+        </form>
+    </header>
+    <main>
+        <h1>List</h1>
+        {% for item in todoList: %}
+        <section class="list">
+            <form action="/" method="post">
+                <section class="row">
+                    <input type="checkbox" name="checkBox" id="{{item.id}}" value="{{item.status}}" {% if item.status == 'Done' %}checked{% endif %} onclick="this.form.submit()">
+                    <input type="hidden" name="todo_id" value="{{item.id}}">
+                    <input type="hidden" name="status" value="{% if item.status == 'Doing' %}Done{% else %}Doing{% endif %}">
+                    <label for="{{item.id}}">
+                        <input class="todo-input" type="text" id="{{item.id}}" name="todo_des" value="{{item.description}}">
+                    </label>
+                </section>
+                <div class=" rowBtns">
+                    {% if item.status == 'Doing' %}
+                        <button type="submit" name="updateBtn" value="update">Update</button>
+                    {% endif %}
+                    <button type="submit" name="deleteBtn" value="delete">Delete</button>
+                </div>
+            </form>
+        </section>
+        {% endfor %}
+    </main>
+    
+</body>
+</html>

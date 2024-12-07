@@ -1,0 +1,107 @@
+header{
+    display:grid;
+    grid-row: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+form{
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+}
+
+section form {
+    display: flex;
+    justify-content: center;
+}
+
+.row{
+    display: flex;
+    justify-content:  start;
+    margin: 0 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    width: 500px;
+    padding: 20px 10px;
+    gap: 10px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+}
+
+input[type=search] {
+    padding: 5px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.todo-input {
+    width: 450px;
+    border: none;
+    outline: none;
+}
+
+.rowBtns{
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 675px) {
+    .rowBtns {
+        display: block;
+    }
+    .todo-input{
+        width: 300px;
+    }
+}
+
+button#createBtn {
+    background-color: blue;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+button[name=updateBtn] {
+    background-color: rgb(116, 221, 116);
+    padding: 5px 2px;
+    border-radius: 7px;
+    box-shadow: 2px 4px black;
+}
+
+button[name=deleteBtn] {
+    background-color: red;
+    padding: 5px 2px;
+    border-radius: 7px;
+    box-shadow: 2px 4px black;
+}
+
+button[name=updateBtn]:active {
+    background-color: rgb(116, 221, 116);
+    padding: 5px 2px;
+    border-radius: 7px;
+    box-shadow: 0 0 black;
+}
+
+button[name=deleteBtn]:active {
+    background-color: red;
+    padding: 5px 2px;
+    border-radius: 7px;
+    box-shadow: 0 0 black;
+}
+
+
+section.row:has(input[type=checkbox]:checked) {
+    background-color: aqua;
+}
+
+input[type="checkbox"]:checked ~ div > button:first-child { 
+    display: none; 
+}
+
+section.row:has(input[type=checkbox]:checked) > label > input {
+    background-color: aqua;
+}

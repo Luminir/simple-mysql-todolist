@@ -3,8 +3,6 @@
 ## Background:
 This is a school final project, even the website is relatively simple but i learn a lot from this
 
-<br/>
-
 ## Set up the database:
 Mysql Workbench is used as the database. You will only have to modify this part
 
